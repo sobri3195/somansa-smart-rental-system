@@ -18,14 +18,14 @@ export const bookingsApi = {
   },
   
   updateStatus: (id, status, data = {}) => {
-    return apiClient.patch(`/api/bookings/status.php?id=${id}`, {
+    return apiClient.patch(`/api/bookings/update-status.php?id=${id}`, {
       status,
       ...data
     });
   },
   
   cancel: (id, reason) => {
-    return apiClient.post(`/api/bookings/cancel.php?id=${id}`, { reason });
+    return apiClient.delete(`/api/bookings/delete.php?id=${id}`, { data: { reason } });
   },
   
   checkAvailability: (unitId, startDate, endDate) => {
