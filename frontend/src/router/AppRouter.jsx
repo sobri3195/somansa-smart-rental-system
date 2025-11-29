@@ -11,6 +11,8 @@ import CustomerLayout from '../components/layout/CustomerLayout';
 import HomePage from '../pages/public/HomePage';
 import PropertyListPage from '../pages/public/PropertyListPage';
 import PropertyDetailPage from '../pages/public/PropertyDetailPage';
+import BookingLookupPage from '../pages/public/BookingLookupPage';
+import CalendarViewPage from '../pages/public/CalendarViewPage';
 
 // Auth pages
 import LoginPage from '../pages/auth/LoginPage';
@@ -83,6 +85,8 @@ const AppRouter = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/properties" element={<PropertyListPage />} />
         <Route path="/properties/:id" element={<PropertyDetailPage />} />
+        <Route path="/booking-lookup" element={<BookingLookupPage />} />
+        <Route path="/calendar" element={<CalendarViewPage />} />
       </Route>
 
       {/* Auth routes */}

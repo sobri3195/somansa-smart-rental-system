@@ -28,6 +28,18 @@ const PublicLayout = () => {
                 >
                   Properties
                 </Link>
+                <Link
+                  to="/calendar"
+                  className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900"
+                >
+                  Calendar
+                </Link>
+                <Link
+                  to="/booking-lookup"
+                  className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900"
+                >
+                  Track Booking
+                </Link>
               </div>
             </div>
             <div className="flex items-center space-x-4">
