@@ -6,6 +6,9 @@ import PropertyDetail from './pages/PropertyDetail';
 import BookingLookup from './pages/BookingLookup';
 import Overview from './pages/Overview';
 import Calendar from './pages/Calendar';
+import Favorites from './pages/Favorites';
+import Compare from './pages/Compare';
+import SupportWidget from './components/common/SupportWidget';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,7 +31,10 @@ function App() {
           <Route path="/booking-lookup" element={<BookingLookup />} />
           <Route path="/overview" element={<Overview />} />
           <Route path="/calendar" element={<Calendar />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/compare" element={<Compare />} />
         </Routes>
+        <SupportWidget />
       </BrowserRouter>
     </QueryClientProvider>
   );

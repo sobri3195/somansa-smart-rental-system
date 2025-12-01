@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import Card from '../common/Card';
 import Badge from '../common/Badge';
+import FavoriteButton from '../common/FavoriteButton';
+import CompareButton from '../common/CompareButton';
 import { formatCurrency, formatPropertyType } from '../../utils/formatters';
 
 export default function PropertyCard({ property }) {
@@ -22,6 +24,9 @@ export default function PropertyCard({ property }) {
             {property.type === 'car' && '🚗'}
           </div>
         )}
+        <div style={{ position: 'absolute', top: '0.5rem', right: '0.5rem', display: 'flex', gap: '0.5rem' }}>
+          <FavoriteButton propertyId={property.id} />
+        </div>
       </div>
       
       <div className="property-content">
@@ -43,6 +48,9 @@ export default function PropertyCard({ property }) {
             <span className="price-period">
               {property.type === 'car' ? '/day' : '/month'}
             </span>
+          </div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <CompareButton propertyId={property.id} />
           </div>
         </div>
       </div>
