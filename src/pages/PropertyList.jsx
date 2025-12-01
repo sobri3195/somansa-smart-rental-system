@@ -4,6 +4,7 @@ import PropertyCard from '../components/property/PropertyCard';
 import PropertyFilter from '../components/property/PropertyFilter';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ErrorMessage from '../components/common/ErrorMessage';
+import SmartSearch from '../components/common/SmartSearch';
 import { useProperties } from '../hooks/useProperties';
 
 export default function PropertyList() {
@@ -17,6 +18,11 @@ export default function PropertyList() {
       if (filters.type && property.type !== filters.type) return false;
       
       if (filters.city && !property.city?.toLowerCase().includes(filters.city.toLowerCase())) {
+        return false;
+      }
+      
+      if (filters.search && !property.name?.toLowerCase().includes(filters.search.toLowerCase()) &&
+          !property.description?.toLowerCase().includes(filters.search.toLowerCase())) {
         return false;
       }
       
@@ -36,6 +42,10 @@ export default function PropertyList() {
     setFilters(newFilters);
   };
 
+  const handleSearch = (query) => {
+    setFilters(prev => ({ ...prev, search: query }));
+  };
+
   return (
     <Layout>
       <div className="property-list-page">
@@ -44,6 +54,11 @@ export default function PropertyList() {
             <h1>Browse Properties</h1>
             <p>Find the perfect rental for your needs</p>
           </div>
+
+          <SmartSearch 
+            onSearch={handleSearch}
+            initialValue={filters.search || ''}
+          />
 
           <PropertyFilter onFilterChange={handleFilterChange} />
 

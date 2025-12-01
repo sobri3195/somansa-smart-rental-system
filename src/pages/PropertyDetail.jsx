@@ -11,6 +11,11 @@ import ReviewsSection from '../components/common/ReviewsSection';
 import ImageGallery from '../components/common/ImageGallery';
 import FavoriteButton from '../components/common/FavoriteButton';
 import CompareButton from '../components/common/CompareButton';
+import VirtualTour from '../components/common/VirtualTour';
+import PriceCalculator from '../components/common/PriceCalculator';
+import ARPreview from '../components/common/ARPreview';
+import PriceAlert from '../components/common/PriceAlert';
+import SocialShare from '../components/common/SocialShare';
 import { useProperty, usePropertyUnits } from '../hooks/useProperties';
 import { formatPropertyType } from '../utils/formatters';
 
@@ -74,15 +79,32 @@ export default function PropertyDetail() {
               <h1>{property.name}</h1>
               {property.city && <p className="property-location">📍 {property.city}</p>}
             </div>
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
               <FavoriteButton propertyId={property.id} />
               <CompareButton propertyId={property.id} />
+              <SocialShare property={property} />
+              <PriceAlert 
+                propertyId={property.id} 
+                propertyName={property.name}
+                currentPrice={property.price || 0}
+              />
               <Badge variant={property.type}>{formatPropertyType(property.type)}</Badge>
             </div>
           </div>
 
           {property.images && property.images.length > 0 && (
             <ImageGallery images={property.images} title={property.name} />
+          )}
+
+          <VirtualTour images={property.images || []} />
+          
+          <ARPreview property={property} />
+
+          {property.price && (
+            <PriceCalculator 
+              basePrice={property.price} 
+              type={property.type === 'car' ? 'daily' : 'monthly'} 
+            />
           )}
 
           <div className="property-info">
