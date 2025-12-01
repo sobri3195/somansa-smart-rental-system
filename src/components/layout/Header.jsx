@@ -26,6 +26,9 @@ export default function Header() {
             </Link>
             <Link to="/booking-lookup" className="nav-link">My Booking</Link>
             <Link to="/overview" className="nav-link">Overview</Link>
+            <Link to="/admin" className="nav-link admin-link" title="Admin Panel">
+              🔐 Admin
+            </Link>
           </nav>
         </div>
       </div>

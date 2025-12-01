@@ -1,0 +1,234 @@
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+}
+
+.admin-login-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.admin-login-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin-logo {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.admin-login-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.admin-login-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.demo-info {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-badge {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.badge-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.info-badge strong {
+  display: block;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-badge p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.demo-credentials {
+  background: var(--bg-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.demo-credentials h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.credential-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.credential-item:last-child {
+  border-bottom: none;
+}
+
+.credential-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.credential-value {
+  color: var(--text-color);
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+.btn-demo-login {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn-demo-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.btn-demo-login:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-demo-login:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.admin-features {
+  margin-bottom: 2rem;
+}
+
+.admin-features h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--bg-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.feature-icon {
+  font-size: 1.25rem;
+}
+
+.back-to-site {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.back-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--primary-color);
+}
+
+.admin-login-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.admin-login-footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.demo-note {
+  font-size: 0.85rem !important;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .admin-login-page {
+    padding: 1rem;
+  }
+
+  .admin-login-card {
+    padding: 2rem;
+  }
+
+  .admin-logo {
+    font-size: 3rem;
+  }
+
+  .admin-login-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

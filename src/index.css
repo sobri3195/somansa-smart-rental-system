@@ -114,6 +114,21 @@ body {
   color: var(--primary-color);
 }
 
+.nav-link.admin-link {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.nav-link.admin-link:hover {
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+  transform: translateY(-1px);
+}
+
 .footer {
   background-color: var(--text-primary);
   color: white;
