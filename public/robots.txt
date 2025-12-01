@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://somansa-rental.netlify.app/sitemap.xml

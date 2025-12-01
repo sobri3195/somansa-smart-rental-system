@@ -7,6 +7,10 @@ import BookingSuccess from '../components/booking/BookingSuccess';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ErrorMessage from '../components/common/ErrorMessage';
 import Badge from '../components/common/Badge';
+import ReviewsSection from '../components/common/ReviewsSection';
+import ImageGallery from '../components/common/ImageGallery';
+import FavoriteButton from '../components/common/FavoriteButton';
+import CompareButton from '../components/common/CompareButton';
 import { useProperty, usePropertyUnits } from '../hooks/useProperties';
 import { formatPropertyType } from '../utils/formatters';
 
@@ -70,13 +74,15 @@ export default function PropertyDetail() {
               <h1>{property.name}</h1>
               {property.city && <p className="property-location">📍 {property.city}</p>}
             </div>
-            <Badge variant={property.type}>{formatPropertyType(property.type)}</Badge>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <FavoriteButton propertyId={property.id} />
+              <CompareButton propertyId={property.id} />
+              <Badge variant={property.type}>{formatPropertyType(property.type)}</Badge>
+            </div>
           </div>
 
           {property.images && property.images.length > 0 && (
-            <div className="property-images">
-              <img src={property.images[0]} alt={property.name} className="main-image" />
-            </div>
+            <ImageGallery images={property.images} title={property.name} />
           )}
 
           <div className="property-info">
@@ -134,6 +140,8 @@ export default function PropertyDetail() {
               onSuccess={handleBookingSuccess}
             />
           </section>
+
+          <ReviewsSection propertyId={id} />
         </div>
       </div>
     </Layout>
