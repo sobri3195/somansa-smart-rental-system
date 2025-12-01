@@ -4,6 +4,7 @@ import Layout from '../components/layout/Layout';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ErrorMessage from '../components/common/ErrorMessage';
 import Badge from '../components/common/Badge';
+import BookingTimeline from '../components/common/BookingTimeline';
 import { useBookingLookup } from '../hooks/useBookings';
 import { useInvoice } from '../hooks/useInvoice';
 import { formatDate, formatDateTime } from '../utils/dateUtils';
@@ -72,6 +73,11 @@ export default function BookingLookup() {
                   {booking.status}
                 </Badge>
               </div>
+
+              <BookingTimeline 
+                status={booking.status} 
+                history={[booking.createdAt, booking.confirmedAt, booking.paidAt]} 
+              />
 
               <div className="detail-grid">
                 <div className="detail-section">
