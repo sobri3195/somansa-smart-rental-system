@@ -1,0 +1,141 @@
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Layout from '../components/layout/Layout';
+import UnitCard from '../components/property/UnitCard';
+import BookingForm from '../components/booking/BookingForm';
+import BookingSuccess from '../components/booking/BookingSuccess';
+import LoadingSpinner from '../components/common/LoadingSpinner';
+import ErrorMessage from '../components/common/ErrorMessage';
+import Badge from '../components/common/Badge';
+import { useProperty, usePropertyUnits } from '../hooks/useProperties';
+import { formatPropertyType } from '../utils/formatters';
+
+export default function PropertyDetail() {
+  const { id } = useParams();
+  const [selectedUnit, setSelectedUnit] = useState(null);
+  const [bookingSuccess, setBookingSuccess] = useState(null);
+
+  const { data: property, isLoading: propertyLoading, isError: propertyError, error: propertyErrorData } = useProperty(id);
+  const { data: units, isLoading: unitsLoading, isError: unitsError } = usePropertyUnits(id);
+
+  const isLoading = propertyLoading || unitsLoading;
+  const isError = propertyError || unitsError;
+
+  const handleUnitSelect = (unit) => {
+    setSelectedUnit(unit);
+    document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleBookingSuccess = (booking) => {
+    setBookingSuccess(booking);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="container">
+          <LoadingSpinner message="Loading property details..." />
+        </div>
+      </Layout>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Layout>
+        <div className="container">
+          <ErrorMessage message={propertyErrorData?.response?.data?.message || 'Failed to load property'} />
+        </div>
+      </Layout>
+    );
+  }
+
+  if (bookingSuccess) {
+    return (
+      <Layout>
+        <div className="container">
+          <BookingSuccess booking={bookingSuccess} />
+        </div>
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout>
+      <div className="property-detail-page">
+        <div className="container">
+          <div className="property-detail-header">
+            <div>
+              <h1>{property.name}</h1>
+              {property.city && <p className="property-location">📍 {property.city}</p>}
+            </div>
+            <Badge variant={property.type}>{formatPropertyType(property.type)}</Badge>
+          </div>
+
+          {property.images && property.images.length > 0 && (
+            <div className="property-images">
+              <img src={property.images[0]} alt={property.name} className="main-image" />
+            </div>
+          )}
+
+          <div className="property-info">
+            <section className="info-section">
+              <h2>Description</h2>
+              <p>{property.description || 'No description available.'}</p>
+            </section>
+
+            {property.facilities && property.facilities.length > 0 && (
+              <section className="info-section">
+                <h2>Facilities</h2>
+                <div className="facilities-list">
+                  {property.facilities.map((facility, idx) => (
+                    <div key={idx} className="facility-item">
+                      <span className="facility-icon">✓</span>
+                      <span>{facility}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {property.address && (
+              <section className="info-section">
+                <h2>Location</h2>
+                <p>{property.address}</p>
+              </section>
+            )}
+          </div>
+
+          <section className="units-section">
+            <h2>Available Units</h2>
+            {unitsLoading && <LoadingSpinner message="Loading units..." />}
+            {unitsError && <p>Failed to load units</p>}
+            {units && units.length === 0 && <p>No units available</p>}
+            {units && units.length > 0 && (
+              <div className="units-grid">
+                {units.map(unit => (
+                  <UnitCard 
+                    key={unit.id} 
+                    unit={unit} 
+                    onSelect={handleUnitSelect}
+                    selected={selectedUnit?.id === unit.id}
+                  />
+                ))}
+              </div>
+            )}
+          </section>
+
+          <section id="booking-section" className="booking-section">
+            <BookingForm 
+              propertyId={id}
+              unitId={selectedUnit?.id}
+              propertyType={property.type}
+              onSuccess={handleBookingSuccess}
+            />
+          </section>
+        </div>
+      </div>
+    </Layout>
+  );
+}
