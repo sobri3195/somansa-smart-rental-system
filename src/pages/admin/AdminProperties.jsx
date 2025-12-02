@@ -68,7 +68,7 @@ const AdminProperties = () => {
             <h1>Properties Management</h1>
             <p>Manage all property listings</p>
           </div>
-          <Link to="/admin/properties/new" className="btn btn-primary">
+          <Link to="/adminsuper/properties/new" className="btn btn-primary">
             + Add New Property
           </Link>
         </div>
@@ -139,7 +139,7 @@ const AdminProperties = () => {
                     <div className="property-cell">
                       <div className="property-info">
                         <Link
-                          to={`/admin/properties/${property.id}`}
+                          to={`/adminsuper/properties/${property.id}`}
                           className="property-name"
                         >
                           {property.name}
@@ -163,7 +163,7 @@ const AdminProperties = () => {
                   <td>
                     <div className="action-buttons">
                       <Link
-                        to={`/admin/properties/${property.id}/edit`}
+                        to={`/adminsuper/properties/${property.id}/edit`}
                         className="action-btn edit"
                         title="Edit"
                       >

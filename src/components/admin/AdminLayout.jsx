@@ -17,20 +17,20 @@ const AdminLayout = ({ children }) => {
   };
 
   const menuItems = [
-    { path: '/admin/dashboard', icon: '📊', label: 'Dashboard' },
-    { path: '/admin/properties', icon: '🏠', label: 'Properties' },
-    { path: '/admin/bookings', icon: '📅', label: 'Bookings' },
-    { path: '/admin/users', icon: '👥', label: 'Users' },
-    { path: '/admin/analytics', icon: '📈', label: 'Analytics' },
-    { path: '/admin/reviews', icon: '⭐', label: 'Reviews' },
-    { path: '/admin/settings', icon: '⚙️', label: 'Settings' },
+    { path: '/adminsuper/dashboard', icon: '📊', label: 'Dashboard' },
+    { path: '/adminsuper/properties', icon: '🏠', label: 'Properties' },
+    { path: '/adminsuper/bookings', icon: '📅', label: 'Bookings' },
+    { path: '/adminsuper/users', icon: '👥', label: 'Users' },
+    { path: '/adminsuper/analytics', icon: '📈', label: 'Analytics' },
+    { path: '/adminsuper/reviews', icon: '⭐', label: 'Reviews' },
+    { path: '/adminsuper/settings', icon: '⚙️', label: 'Settings' },
   ];
 
   return (
     <div className="admin-layout">
       <aside className="admin-sidebar">
         <div className="sidebar-header">
-          <Link to="/admin/dashboard" className="logo">
+          <Link to="/adminsuper/dashboard" className="logo">
             <span className="logo-icon">🏢</span>
             <span className="logo-text">Somansa Admin</span>
           </Link>
@@ -78,10 +78,10 @@ const AdminLayout = ({ children }) => {
                 </div>
               </button>
               <div className="user-menu-dropdown">
-                <Link to="/admin/profile" className="dropdown-item">
+                <Link to="/adminsuper/profile" className="dropdown-item">
                   👤 Profile
                 </Link>
-                <Link to="/admin/settings" className="dropdown-item">
+                <Link to="/adminsuper/settings" className="dropdown-item">
                   ⚙️ Settings
                 </Link>
                 <button onClick={handleLogout} className="dropdown-item">

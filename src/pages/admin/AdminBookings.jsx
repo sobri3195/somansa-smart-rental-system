@@ -82,7 +82,7 @@ const AdminBookings = () => {
             <h1>Bookings Management</h1>
             <p>Manage all bookings and reservations</p>
           </div>
-          <Link to="/admin/bookings/new" className="btn btn-primary">
+          <Link to="/adminsuper/bookings/new" className="btn btn-primary">
             + New Booking
           </Link>
         </div>
@@ -120,7 +120,7 @@ const AdminBookings = () => {
               {bookings.map((booking) => (
                 <tr key={booking.id}>
                   <td>
-                    <Link to={`/admin/bookings/${booking.id}`} className="property-name">
+                    <Link to={`/adminsuper/bookings/${booking.id}`} className="property-name">
                       {booking.bookingCode}
                     </Link>
                   </td>
@@ -150,7 +150,7 @@ const AdminBookings = () => {
                   <td>
                     <div className="action-buttons">
                       <Link
-                        to={`/admin/bookings/${booking.id}`}
+                        to={`/adminsuper/bookings/${booking.id}`}
                         className="action-btn edit"
                         title="View Details"
                       >

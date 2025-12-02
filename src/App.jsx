@@ -46,14 +46,14 @@ function App() {
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/compare" element={<Compare />} />
               
-              <Route path="/admin" element={<AdminLogin />} />
-              <Route path="/admin/dashboard" element={<AdminDashboard />} />
-              <Route path="/admin/properties" element={<AdminProperties />} />
-              <Route path="/admin/bookings" element={<AdminBookings />} />
-              <Route path="/admin/users" element={<AdminUsers />} />
-              <Route path="/admin/analytics" element={<AdminAnalytics />} />
-              <Route path="/admin/reviews" element={<AdminReviews />} />
-              <Route path="/admin/settings" element={<AdminSettings />} />
+              <Route path="/adminsuper" element={<AdminLogin />} />
+              <Route path="/adminsuper/dashboard" element={<AdminDashboard />} />
+              <Route path="/adminsuper/properties" element={<AdminProperties />} />
+              <Route path="/adminsuper/bookings" element={<AdminBookings />} />
+              <Route path="/adminsuper/users" element={<AdminUsers />} />
+              <Route path="/adminsuper/analytics" element={<AdminAnalytics />} />
+              <Route path="/adminsuper/reviews" element={<AdminReviews />} />
+              <Route path="/adminsuper/settings" element={<AdminSettings />} />
             </Routes>
             <Analytics />
           </BrowserRouter>

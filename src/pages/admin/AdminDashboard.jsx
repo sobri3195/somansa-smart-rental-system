@@ -116,10 +116,10 @@ const AdminDashboard = () => {
             <p>Welcome back, {adminUser?.name}!</p>
           </div>
           <div className="dashboard-actions">
-            <Link to="/admin/properties/new" className="btn btn-primary">
+            <Link to="/adminsuper/properties/new" className="btn btn-primary">
               + Add Property
             </Link>
-            <Link to="/admin/bookings/new" className="btn btn-secondary">
+            <Link to="/adminsuper/bookings/new" className="btn btn-secondary">
               + New Booking
             </Link>
           </div>
@@ -185,7 +185,7 @@ const AdminDashboard = () => {
           <div className="dashboard-section">
             <div className="section-header">
               <h2>Recent Bookings</h2>
-              <Link to="/admin/bookings" className="view-all-link">
+              <Link to="/adminsuper/bookings" className="view-all-link">
                 View All →
               </Link>
             </div>
@@ -205,7 +205,7 @@ const AdminDashboard = () => {
                   {recentBookings.map((booking) => (
                     <tr key={booking.id}>
                       <td>
-                        <Link to={`/admin/bookings/${booking.id}`} className="booking-link">
+                        <Link to={`/adminsuper/bookings/${booking.id}`} className="booking-link">
                           {booking.bookingCode}
                         </Link>
                       </td>
@@ -246,22 +246,22 @@ const AdminDashboard = () => {
         <div className="quick-links">
           <h2>Quick Actions</h2>
           <div className="quick-links-grid">
-            <Link to="/admin/properties" className="quick-link-card">
+            <Link to="/adminsuper/properties" className="quick-link-card">
               <div className="quick-link-icon">🏠</div>
               <h3>Manage Properties</h3>
               <p>View and edit properties</p>
             </Link>
-            <Link to="/admin/bookings" className="quick-link-card">
+            <Link to="/adminsuper/bookings" className="quick-link-card">
               <div className="quick-link-icon">📅</div>
               <h3>Manage Bookings</h3>
               <p>Handle bookings and reservations</p>
             </Link>
-            <Link to="/admin/analytics" className="quick-link-card">
+            <Link to="/adminsuper/analytics" className="quick-link-card">
               <div className="quick-link-icon">📊</div>
               <h3>View Analytics</h3>
               <p>Insights and reports</p>
             </Link>
-            <Link to="/admin/settings" className="quick-link-card">
+            <Link to="/adminsuper/settings" className="quick-link-card">
               <div className="quick-link-icon">⚙️</div>
               <h3>Settings</h3>
               <p>Configure system settings</p>
