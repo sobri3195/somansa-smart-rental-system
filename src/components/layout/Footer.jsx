@@ -18,16 +18,6 @@ export default function Footer() {
               <li><a href="/overview">Overview</a></li>
             </ul>
           </div>
-          
-          <div className="footer-section">
-            <h4>Contact & Support</h4>
-            <ul>
-              <li><a href="mailto:muhammadsobrimaulana31@gmail.com">📧 Email</a></li>
-              <li><a href="https://t.me/winlin_exploit" target="_blank" rel="noopener noreferrer">💬 Telegram</a></li>
-              <li><a href="https://chat.whatsapp.com/B8nwRZOBMo64GjTwdXV8Bl" target="_blank" rel="noopener noreferrer">📱 WhatsApp Group</a></li>
-              <li><a href="https://muhammadsobrimaulana.netlify.app" target="_blank" rel="noopener noreferrer">🌐 Website</a></li>
-            </ul>
-          </div>
         </div>
         
         <div className="footer-bottom">

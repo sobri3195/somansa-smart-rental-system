@@ -108,41 +108,6 @@
   }
 }
 
-/* Dark Mode Styles */
-.dark-mode {
-  --bg-primary: #1a1a2e;
-  --bg-secondary: #16213e;
-  --bg-tertiary: #0f3460;
-  --text-primary: #eee;
-  --text-secondary: #ccc;
-  --text-muted: #999;
-  --border-color: #2a2a3e;
-  --box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-  --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-}
-
-.dark-mode-toggle {
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  z-index: 1000;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid var(--border-color);
-  background: var(--bg-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: var(--box-shadow-lg);
-  animation: fadeIn 0.5s ease;
-}
-
-.dark-mode-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
 /* Toast Notifications */
 .toast-container {
   position: fixed;
@@ -682,28 +647,6 @@
   font-size: 4rem;
   margin-bottom: var(--spacing-md);
   opacity: 0.3;
-}
-
-/* Language Toggle */
-.language-toggle {
-  position: fixed;
-  top: 140px;
-  right: 20px;
-  z-index: 1000;
-  padding: 10px 16px;
-  border-radius: 25px;
-  border: 2px solid var(--border-color);
-  background: var(--bg-primary);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: var(--box-shadow-lg);
-  font-weight: 600;
-  animation: fadeIn 0.5s ease 0.1s both;
-}
-
-.language-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Booking Timeline */
@@ -1568,14 +1511,6 @@
 
 /* Responsive Animations */
 @media (max-width: 768px) {
-  .dark-mode-toggle,
-  .language-toggle {
-    width: 45px;
-    height: 45px;
-    padding: 8px 12px;
-    font-size: 0.875rem;
-  }
-
   .analytics-panel {
     width: calc(100vw - 40px);
     max-width: 350px;
@@ -1618,8 +1553,6 @@
 
 /* Print Styles */
 @media print {
-  .dark-mode-toggle,
-  .language-toggle,
   .analytics-widget,
   .toast-container,
   .ar-preview,

@@ -9,7 +9,6 @@ import {
   dummyPartners,
   dummyFAQs,
   dummyPromotions,
-  dummyRecentActivities,
   dummyFeatures
 } from '../data/dummyData';
 
@@ -196,26 +195,6 @@ export default function Home() {
                 <div style={{ color: '#666', fontSize: '1.1rem' }}>Cities</div>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="recent-activity" style={{
-          padding: '1rem 0',
-          background: '#f8f9fa',
-          borderTop: '1px solid #e0e0e0',
-          borderBottom: '1px solid #e0e0e0',
-          overflow: 'hidden'
-        }}>
-          <div className="ticker" style={{
-            display: 'flex',
-            gap: '3rem',
-            whiteSpace: 'nowrap'
-          }}>
-            {[...dummyRecentActivities, ...dummyRecentActivities].map((activity, index) => (
-              <span key={index} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                🔔 <strong>{activity.user}</strong> {activity.action} {activity.property} - {activity.time}
-              </span>
-            ))}
           </div>
         </section>
 
