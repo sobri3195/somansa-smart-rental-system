@@ -2281,3 +2281,85 @@ textarea.form-input {
     transform: none;
   }
 }
+
+/* Wave Section Dividers - Elementor Style */
+.wave-divider {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.wave-divider.top {
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.wave-divider.bottom {
+  bottom: 0;
+  left: 0;
+}
+
+.wave-divider .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* Wave variations */
+.wave-divider.wave-white .shape-fill {
+  fill: #FFFFFF;
+}
+
+.wave-divider.wave-gray .shape-fill {
+  fill: #f8f9fa;
+}
+
+.wave-divider.wave-gradient .shape-fill {
+  fill: url(#waveGradient);
+}
+
+/* Taller waves for hero sections */
+.wave-divider.wave-large svg {
+  height: 100px;
+}
+
+/* Smooth waves animation */
+.wave-divider.wave-animated svg {
+  animation: wave-motion 8s ease-in-out infinite;
+}
+
+@keyframes wave-motion {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+}
+
+/* Section with wave wrapper */
+.section-with-waves {
+  position: relative;
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .wave-divider svg {
+    height: 40px;
+  }
+  
+  .wave-divider.wave-large svg {
+    height: 60px;
+  }
+  
+  .section-with-waves {
+    padding: 3rem 0;
+  }
+}

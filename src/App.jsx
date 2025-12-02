@@ -8,9 +8,6 @@ import Overview from './pages/Overview';
 import Calendar from './pages/Calendar';
 import Favorites from './pages/Favorites';
 import Compare from './pages/Compare';
-import SupportWidget from './components/common/SupportWidget';
-import DarkModeToggle from './components/common/DarkModeToggle';
-import LanguageToggle, { LanguageProvider } from './components/common/LanguageToggle';
 import Analytics from './components/common/Analytics';
 import { ToastProvider } from './components/common/Toast';
 import { AdminProvider } from './contexts/AdminContext';
@@ -37,35 +34,30 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ToastProvider>
-        <LanguageProvider>
-          <AdminProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/properties" element={<PropertyList />} />
-                <Route path="/properties/:id" element={<PropertyDetail />} />
-                <Route path="/booking-lookup" element={<BookingLookup />} />
-                <Route path="/overview" element={<Overview />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/favorites" element={<Favorites />} />
-                <Route path="/compare" element={<Compare />} />
-                
-                <Route path="/admin" element={<AdminLogin />} />
-                <Route path="/admin/dashboard" element={<AdminDashboard />} />
-                <Route path="/admin/properties" element={<AdminProperties />} />
-                <Route path="/admin/bookings" element={<AdminBookings />} />
-                <Route path="/admin/users" element={<AdminUsers />} />
-                <Route path="/admin/analytics" element={<AdminAnalytics />} />
-                <Route path="/admin/reviews" element={<AdminReviews />} />
-                <Route path="/admin/settings" element={<AdminSettings />} />
-              </Routes>
-              <SupportWidget />
-              <DarkModeToggle />
-              <LanguageToggle />
-              <Analytics />
-            </BrowserRouter>
-          </AdminProvider>
-        </LanguageProvider>
+        <AdminProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/properties" element={<PropertyList />} />
+              <Route path="/properties/:id" element={<PropertyDetail />} />
+              <Route path="/booking-lookup" element={<BookingLookup />} />
+              <Route path="/overview" element={<Overview />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/compare" element={<Compare />} />
+              
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/properties" element={<AdminProperties />} />
+              <Route path="/admin/bookings" element={<AdminBookings />} />
+              <Route path="/admin/users" element={<AdminUsers />} />
+              <Route path="/admin/analytics" element={<AdminAnalytics />} />
+              <Route path="/admin/reviews" element={<AdminReviews />} />
+              <Route path="/admin/settings" element={<AdminSettings />} />
+            </Routes>
+            <Analytics />
+          </BrowserRouter>
+        </AdminProvider>
       </ToastProvider>
     </QueryClientProvider>
   );
