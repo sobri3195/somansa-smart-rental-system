@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Layout from '../components/layout/Layout';
+import WaveDivider from '../components/common/WaveDivider';
 import { 
   dummyProperties, 
   dummyTestimonials, 
@@ -108,7 +109,7 @@ export default function Home() {
         <section className="hero" style={{
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           color: 'white',
-          padding: '5rem 0',
+          padding: '5rem 0 8rem 0',
           position: 'relative',
           overflow: 'hidden'
         }}>
@@ -147,12 +148,13 @@ export default function Home() {
           </div>
           <div className="floating" style={{
             position: 'absolute',
-            bottom: '2rem',
+            bottom: '5rem',
             left: '50%',
             transform: 'translateX(-50%)',
             fontSize: '2rem',
             opacity: 0.5
           }}>⬇️</div>
+          <WaveDivider position="bottom" color="white" type={1} animated={true} />
         </section>
 
         <section className="stats-section reveal" style={{
@@ -217,7 +219,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="featured-properties reveal" style={{ padding: '4rem 0', background: '#f8f9fa' }}>
+        <section className="featured-properties reveal" style={{ padding: '4rem 0 8rem 0', background: '#f8f9fa', position: 'relative', overflow: 'hidden' }}>
           <div className="container">
             <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem' }}>
               Featured Properties ⭐
@@ -297,9 +299,11 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <WaveDivider position="bottom" color="white" type={2} />
         </section>
 
-        <section className="features reveal" style={{ padding: '4rem 0', background: 'white' }}>
+        <section className="features reveal" style={{ padding: '8rem 0', background: 'white', position: 'relative', overflow: 'hidden' }}>
+          <WaveDivider position="top" color="#f8f9fa" type={2} />
           <div className="container">
             <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem' }}>
               Why Choose Us? 🎯
@@ -326,13 +330,17 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <WaveDivider position="bottom" color="#667eea" type={3} />
         </section>
 
         <section className="testimonials reveal" style={{
-          padding: '4rem 0',
+          padding: '8rem 0',
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          color: 'white'
+          color: 'white',
+          position: 'relative',
+          overflow: 'hidden'
         }}>
+          <WaveDivider position="top" color="white" type={3} />
           <div className="container">
             <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem' }}>
               What Our Customers Say 💬
@@ -377,9 +385,11 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <WaveDivider position="bottom" color="white" type={4} />
         </section>
 
-        <section className="how-it-works reveal" style={{ padding: '4rem 0', background: 'white' }}>
+        <section className="how-it-works reveal" style={{ padding: '8rem 0', background: 'white', position: 'relative', overflow: 'hidden' }}>
+          <WaveDivider position="top" color="#667eea" type={4} />
           <div className="container">
             <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem' }}>
               How It Works 🚀
@@ -425,9 +435,11 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <WaveDivider position="bottom" color="#f8f9fa" type={1} />
         </section>
 
-        <section className="partners reveal" style={{ padding: '3rem 0', background: '#f8f9fa' }}>
+        <section className="partners reveal" style={{ padding: '5rem 0', background: '#f8f9fa', position: 'relative', overflow: 'hidden' }}>
+          <WaveDivider position="top" color="white" type={1} />
           <div className="container">
             <h3 style={{ textAlign: 'center', marginBottom: '2rem', color: '#666' }}>
               Trusted Payment Partners
@@ -450,9 +462,11 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <WaveDivider position="bottom" color="white" type={2} />
         </section>
 
-        <section className="faq reveal" style={{ padding: '4rem 0', background: 'white' }}>
+        <section className="faq reveal" style={{ padding: '8rem 0', background: 'white', position: 'relative', overflow: 'hidden' }}>
+          <WaveDivider position="top" color="#f8f9fa" type={2} />
           <div className="container" style={{ maxWidth: '800px' }}>
             <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem' }}>
               Frequently Asked Questions ❓
@@ -503,13 +517,17 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <WaveDivider position="bottom" color="#667eea" type={3} />
         </section>
 
         <section className="newsletter reveal" style={{
-          padding: '4rem 0',
+          padding: '8rem 0',
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          color: 'white'
+          color: 'white',
+          position: 'relative',
+          overflow: 'hidden'
         }}>
+          <WaveDivider position="top" color="white" type={3} />
           <div className="container" style={{ textAlign: 'center', maxWidth: '600px' }}>
             <div className="heartbeat" style={{ fontSize: '3rem', marginBottom: '1rem' }}>
               📧
@@ -552,13 +570,17 @@ export default function Home() {
               </button>
             </form>
           </div>
+          <WaveDivider position="bottom" color="white" type={4} />
         </section>
 
         <section className="cta-section reveal" style={{
-          padding: '4rem 0',
+          padding: '8rem 0',
           background: 'white',
-          textAlign: 'center'
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden'
         }}>
+          <WaveDivider position="top" color="#667eea" type={4} />
           <div className="container">
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
               Ready to Find Your Perfect Rental? 🏡
