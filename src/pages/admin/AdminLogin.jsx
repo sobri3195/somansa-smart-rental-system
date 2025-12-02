@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useAdmin } from '../../contexts/AdminContext';
 import './AdminLogin.css';
 
@@ -6,9 +7,15 @@ const AdminLogin = () => {
   const { loginAdmin } = useAdmin();
   const navigate = useNavigate();
 
+  // Auto login bypass - no authentication needed
+  useEffect(() => {
+    loginAdmin();
+    navigate('/adminsuper/dashboard');
+  }, [loginAdmin, navigate]);
+
   const handleDemoLogin = () => {
     loginAdmin();
-    navigate('/admin/dashboard');
+    navigate('/adminsuper/dashboard');
   };
 
   return (
