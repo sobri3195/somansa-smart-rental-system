@@ -8,7 +8,6 @@ import Overview from './pages/Overview';
 import Calendar from './pages/Calendar';
 import Favorites from './pages/Favorites';
 import Compare from './pages/Compare';
-import Analytics from './components/common/Analytics';
 import { ToastProvider } from './components/common/Toast';
 import { AdminProvider } from './contexts/AdminContext';
 import AdminLogin from './pages/admin/AdminLogin';
@@ -55,7 +54,6 @@ function App() {
               <Route path="/adminsuper/reviews" element={<AdminReviews />} />
               <Route path="/adminsuper/settings" element={<AdminSettings />} />
             </Routes>
-            <Analytics />
           </BrowserRouter>
         </AdminProvider>
       </ToastProvider>
