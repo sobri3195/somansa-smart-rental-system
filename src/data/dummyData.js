@@ -319,3 +319,122 @@ export const dummyFeatures = [
     description: "Customer support available anytime"
   }
 ];
+
+export const dummyUnits = {
+  1: [ // Luxury Villa Sunset View
+    {
+      id: 101,
+      property_id: 1,
+      unit_number: "A1",
+      floor: 1,
+      price: 5000000,
+      status: "available",
+      description: "Main villa with pool access"
+    },
+    {
+      id: 102,
+      property_id: 1,
+      unit_number: "A2",
+      floor: 2,
+      price: 5500000,
+      status: "available",
+      description: "Upper floor with sea view"
+    }
+  ],
+  2: [ // Modern Kos Exclusive
+    {
+      id: 201,
+      property_id: 2,
+      unit_number: "Room 1",
+      floor: 1,
+      price: 1200000,
+      status: "available",
+      description: "Ground floor room"
+    },
+    {
+      id: 202,
+      property_id: 2,
+      unit_number: "Room 2",
+      floor: 2,
+      price: 1200000,
+      status: "available",
+      description: "Second floor room"
+    },
+    {
+      id: 203,
+      property_id: 2,
+      unit_number: "Room 3",
+      floor: 2,
+      price: 1300000,
+      status: "booked",
+      description: "Premium room with balcony"
+    }
+  ],
+  3: [ // Toyota Avanza 2022
+    {
+      id: 301,
+      property_id: 3,
+      unit_number: "B 1234 CD",
+      price: 350000,
+      status: "available",
+      description: "Manual transmission, silver color"
+    },
+    {
+      id: 302,
+      property_id: 3,
+      unit_number: "B 5678 EF",
+      price: 350000,
+      status: "available",
+      description: "Manual transmission, black color"
+    }
+  ],
+  4: [ // Minimalist House in City Center
+    {
+      id: 401,
+      property_id: 4,
+      unit_number: "House A",
+      price: 3500000,
+      status: "available",
+      description: "Complete unit"
+    }
+  ],
+  5: [ // Student Kos Budget Friendly
+    {
+      id: 501,
+      property_id: 5,
+      unit_number: "Room 1",
+      floor: 1,
+      price: 750000,
+      status: "available",
+      description: "Ground floor"
+    },
+    {
+      id: 502,
+      property_id: 5,
+      unit_number: "Room 2",
+      floor: 1,
+      price: 750000,
+      status: "booked",
+      description: "Ground floor"
+    },
+    {
+      id: 503,
+      property_id: 5,
+      unit_number: "Room 3",
+      floor: 2,
+      price: 750000,
+      status: "available",
+      description: "Second floor"
+    }
+  ],
+  6: [ // Honda Brio 2023
+    {
+      id: 601,
+      property_id: 6,
+      unit_number: "B 9012 GH",
+      price: 250000,
+      status: "available",
+      description: "Automatic transmission, white color"
+    }
+  ]
+};
